@@ -1,0 +1,51 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.filter-transfer{
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+}
+.legend{
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.fieldset{
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+.custom-label{
+  align-items: center;
+  display: flex;
+  min-width: 320px;
+  padding: 10px 20px;
+}
+.custom-label:hover{
+  background-color: #f1fcff;
+  cursor: pointer;
+}
+.custom-checkbox{
+  align-items: center;
+  border: 1px solid #9abbce;
+  border-radius: 2px;
+  display: inline-flex;
+  height: 20px;
+  justify-content: center;
+  margin-right: 10px;
+  width: 20px;
+}
+input:checked + .custom-checkbox{
+  background: url('/check.svg') no-repeat 50% 50%;
+  border-color: #2196F3;
+}
