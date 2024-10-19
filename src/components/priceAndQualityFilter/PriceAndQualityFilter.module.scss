@@ -16,6 +16,9 @@
   display: flex;
   gap: 1px;
   padding: 1px;
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
 }
 .custom-label{
   align-items: center;

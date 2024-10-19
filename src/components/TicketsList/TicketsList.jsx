@@ -74,19 +74,24 @@ export default function TicketsList() {
       <div className={styles['indicator-area']}>
         {status === 'loading' && <Commet color="#2196F3" size="small" text="" textColor="" />}
       </div>
-      <ul className={styles['tickets-list']}>
-        {list.slice(0, showTicket).map((ticket) => (
-          <li key={ticket.id}>
-            <Ticket info={ticket} />
-          </li>
-        ))}
-      </ul>
-      <button
-        className={styles['show-more-button']}
-        onClick={() => setShowTicket((val) => val + 5)}
-      >
-        Показать еще 5 билетов!
-      </button>
+      {list.length === 0 && <div>нет данных для загрузки</div>}
+      {list.length !== 0 && (
+        <>
+          <ul className={styles['tickets-list']}>
+            {list.slice(0, showTicket).map((ticket) => (
+              <li key={ticket.id}>
+                <Ticket info={ticket} />
+              </li>
+            ))}
+          </ul>
+          <button
+            className={styles['show-more-button']}
+            onClick={() => setShowTicket((val) => val + 5)}
+          >
+            Показать еще 5 билетов!
+          </button>
+        </>
+      )}
     </>
   );
 }

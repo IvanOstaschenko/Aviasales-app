@@ -1,4 +1,3 @@
-// import '../../styles/normalize.css';
 import styles from './App.module.scss';
 import FilterOfTransfers from '../FilterOfTransfers/FilterOfTransfers.jsx';
 import Header from '../Header/Header.jsx';

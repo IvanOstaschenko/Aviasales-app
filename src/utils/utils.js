@@ -12,11 +12,8 @@ export function translateTransferNote(num) {
 }
 
 export function flightTime(startTime, flightTime) {
-  console.log('startTime', startTime);
-  console.log('flightTime', flightTime);
   const start = new Date(startTime);
   start.setMinutes(start.getMinutes() + flightTime);
-  console.log('Время прибытия', start);
   return start;
 }
 

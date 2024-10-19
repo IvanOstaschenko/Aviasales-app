@@ -5,7 +5,6 @@ import { format } from 'date-fns';
 
 export default function Ticket({ info }) {
   const { price, carrier } = info;
-  console.log(info);
   return (
     <div className={styles.ticket}>
       <div className={styles['ticket-header']}>
