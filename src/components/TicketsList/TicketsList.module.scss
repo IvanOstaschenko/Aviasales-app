@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 20px;
   list-style: none;
-  margin-top: 20px;
 }
 .show-more-button{
   background-color: #2196F3;
@@ -21,4 +20,7 @@
 .show-more-button:hover{
   box-shadow: 0 2px 8px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+.indicator-area{
+  height: 20px;
 }

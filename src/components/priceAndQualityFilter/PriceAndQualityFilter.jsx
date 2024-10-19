@@ -1,10 +1,10 @@
 import styles from './PriceAndQualityFilter.module.scss';
 import { useDispatch } from 'react-redux';
-import { filterPriceQuality } from '../../slices/filterPriceQualSlice.js';
+import { togglePriceQualityFilter } from '../../slices/filtersSlice.js';
 export default function PriceAndQualityFilter() {
   const dispatch = useDispatch();
   const handler = (val) => {
-    dispatch(filterPriceQuality(val));
+    dispatch(togglePriceQualityFilter(val));
   };
   return (
     <form
@@ -28,7 +28,7 @@ export default function PriceAndQualityFilter() {
           type="radio"
           className={styles['visually-hidden']}
           name="priceQuality"
-          value="quality"
+          value="fast"
         />
         Самый быстрый
       </label>

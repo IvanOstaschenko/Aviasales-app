@@ -1,10 +1,10 @@
 import styles from './FilterOfTransfers.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleTransferFilter } from '../../slices/filterOfTransferSlice.js';
+import { toggleTransferFilter } from '../../slices/filtersSlice.js';
 
 export default function FilterOfTransfers() {
   const dispatch = useDispatch();
-  const selectedFilters = useSelector((state) => state.toggleTransferFilter);
+  const { all, content } = useSelector((state) => state.filters.transfer);
   const handlerInputChange = (text) => {
     dispatch(toggleTransferFilter(text));
   };
@@ -18,12 +18,7 @@ export default function FilterOfTransfers() {
       <fieldset className={styles.fieldset}>
         <legend className={styles.legend}>Количество пересадок</legend>
         <label className={styles['custom-label']}>
-          <input
-            type="checkbox"
-            className={styles['visually-hidden']}
-            name="all"
-            checked={selectedFilters.all}
-          />
+          <input type="checkbox" className={styles['visually-hidden']} name="all" checked={all} />
           <span className={styles['custom-checkbox']}></span>
           Все
         </label>
@@ -31,8 +26,8 @@ export default function FilterOfTransfers() {
           <input
             type="checkbox"
             className={styles['visually-hidden']}
-            name="none"
-            checked={selectedFilters.none}
+            name="0"
+            checked={content[0]}
           />
           <span className={styles['custom-checkbox']}></span>
           Без пересадок
@@ -41,8 +36,8 @@ export default function FilterOfTransfers() {
           <input
             type="checkbox"
             className={styles['visually-hidden']}
-            name="one"
-            checked={selectedFilters.one}
+            name="1"
+            checked={content[1]}
           />
           <span className={styles['custom-checkbox']}></span>1 пересадка
         </label>
@@ -50,8 +45,8 @@ export default function FilterOfTransfers() {
           <input
             type="checkbox"
             className={styles['visually-hidden']}
-            name="two"
-            checked={selectedFilters.two}
+            name="2"
+            checked={content[2]}
           />
           <span className={styles['custom-checkbox']}></span>2 пересадки
         </label>
@@ -59,8 +54,8 @@ export default function FilterOfTransfers() {
           <input
             type="checkbox"
             className={styles['visually-hidden']}
-            name="three"
-            checked={selectedFilters.three}
+            name="3"
+            checked={content[3]}
           />
           <span className={styles['custom-checkbox']}></span>3 пересадки
         </label>

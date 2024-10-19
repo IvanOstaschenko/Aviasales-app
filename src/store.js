@@ -1,12 +1,12 @@
 // store.js
 import { configureStore } from '@reduxjs/toolkit';
-import filterOfTransferReducer from './slices/filterOfTransferSlice';
-import filterPriceQualityReducer from './slices/filterPriceQualSlice.js';
+import filtersSliceReducer from './slices/filtersSlice.js';
+import fetchSliceReducer from './slices/fetchSlice.js';
 
 const store = configureStore({
   reducer: {
-    toggleTransferFilter: filterOfTransferReducer,
-    togglePriceQualityFilter: filterPriceQualityReducer,
+    filters: filtersSliceReducer,
+    tickets: fetchSliceReducer,
   },
 });
 
